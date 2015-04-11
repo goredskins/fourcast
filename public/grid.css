@@ -1,0 +1,56 @@
+/*Custom CSS for product grid*/
+
+body {
+ padding-top:50px;
+ font-family: Droid Sans;
+}
+.brand {
+	font-family: Overlock SC;
+	font-weight: bold;
+	font-size: 1.9em;
+}
+.products-grid {
+ -moz-column-width: 16em;
+ -webkit-column-width: 16em;
+ -moz-column-gap: 0.8em;
+ -webkit-column-gap: 0.8em;
+}
+  
+.menu-category {
+ display: inline-block;
+ margin-bottom:  0.25rem;
+ padding:  1rem;
+ width:  100%; 
+}
+
+.menu-category-name.productbar {
+	background-color: #27494D;
+	border-color: #27494D;
+}
+
+.product-image {
+ width: 100%;
+}
+
+.product {
+ padding-top:22px;  
+}
+
+.btn-product {
+ /*background-color:#222;*/
+ background-color:#195766;
+ color:#eee;
+ border-radius:2px;
+}
+
+.yellow {
+ color:yellow;
+ text-shadow:#ccc 1px 1px 0;
+}
+
+.img-circular{
+ width: 32px;
+ height: 32px;
+ margin-top: 10px;
+ border-radius: 5px;
+}
