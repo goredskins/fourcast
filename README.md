@@ -1,6 +1,6 @@
 # Fourcast: CS 4753 Project<br>
-Nathan Thillairajah - nkt7hr
-Austin Farquhar - alf2fr
+Nathan Thillairajah - nkt7hr <br>
+Austin Farquhar - alf2fr <br>
 Merlin Zhang - mz6ws <br><br><br>
 In order to run our project using node.js, run <code> node server.js </code> from the fourcast directory. <br><br>
 <strong>Important</strong>: In order to login and actually see the products, you must have MongoDB set up  on localhost through port 27017, and have one database created called <code> mydb</code>. The database connection settings are in <code> config/database.ejs</code> if you need to edit those.
