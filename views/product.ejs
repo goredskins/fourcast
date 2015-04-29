@@ -9,24 +9,26 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>Product</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         .item{
-            background-image: url("http://placehold.it/800x300");    
             text-align: center;
-            height: 300px !important;
+            height: 500px !important;
+            width: 800px !important;
         }
         .carousel{
             margin: 20px;
         }
     </style>
-    <link href="navbar.css" rel="stylesheet">
-    <link href="grid.css" rel="stylesheet">
-    <link href="profile.css" rel="stylesheet">
-    <!-- Custom CSS -->
+    <link href="../navbar.css" rel="stylesheet">
+    <link href="../grid.css" rel="stylesheet">
+    <link href="../profile.css" rel="stylesheet">
+    <link href="../star-rating.css" rel="stylesheet">
+    <link href="../product.css" rel="stylesheet">
+
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Overlock+SC' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Montserrat+Subrayada:400,700' rel='stylesheet' type='text/css'>
@@ -60,7 +62,7 @@
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
           <ul class="nav navbar-nav navbar-right">
-          <li><img src="me.png" class="img-circular"> </li>
+          <li><img src="../me.png" class="img-circular"> </li>
           <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= user.local.email %><span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
@@ -92,19 +94,13 @@
        <!-- Carousel items -->
         <div class="carousel-inner">
             <div class="active item first">
-                <div class="carousel-caption">
-                    <h2>First Product Image </h2>
-                </div>
+                <img src = <%= product.photo.url1 %> />
             </div>
             <div class="item second">
-                <div class="carousel-caption">
-                    <h2>Second Product Image </h2>
-                </div>
+                <img src = <%= product.photo.url2 %> />
             </div>
             <div class="item third">
-                <div class="carousel-caption">
-                    <h2>Third Product Image </h2>
-                </div>
+                <img src = <%= product.photo.url3 %> />
             </div>
         </div>
         <!-- Carousel nav -->
@@ -117,11 +113,11 @@
     </div>
 </div>
                     <div class="caption-full">
-                        <h4 class="pull-right">$49.99</h4>
-                        <h4><a href="#">Product Name</a>
+                        <h4 class="pull-right"><%= product.data.price %></h4>
+                        <h4><a href="#"><%= product.data.name %></a>
                         </h4>
                         <p>Here is some information about the product</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <p><%= product.data.description %></p>
                     </div>
                     <div class="ratings">
                         <p class="pull-right">3 reviews</p>
@@ -210,8 +206,7 @@
         </footer>
 
     </div>
-    <!-- /.container -->
-    <!-- Modal -->
+
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -220,19 +215,25 @@
         <h4 class="modal-title" id="myModalLabel">Review Item</h4>
       </div>
       <div class="modal-body">
-        <input type="text"></input>
+        <textarea rows="10" cols="75" wrap="physical" name="comments"></textarea>
+    </input>
+    <br>
+    <p>Used a library found <a href = "http://www.jqueryscript.net/other/Simple-jQuery-Star-Rating-System-For-Bootstrap-3.html"> here </a> for the rating system seen below.</p>
+    <form>
+        <input id="input-21b" value="4" type="number" class="rating" min=0 max=5 step=0.2 data-size="sm">
+    </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add Review</button>
+        <button type="button" class="btn btn-success">Add Review</button>
       </div>
     </div>
   </div>
 </div>
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="../star-rating.js"></script>
 
 </body>
 

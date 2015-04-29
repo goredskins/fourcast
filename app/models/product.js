@@ -1,12 +1,10 @@
 var mongoose = require('mongoose');
-//var bcrypt   = require('bcrypt-nodejs');
-
-// define the schema for our product model
-var userSchema = mongoose.Schema({
+var productSchema = mongoose.Schema({
 
     data            : {
         name        : String,
         description     : String,
+        short_desc : String
     },
     photo         : {
         url           : String,
@@ -16,4 +14,19 @@ var userSchema = mongoose.Schema({
 
 
 // create the model for products and expose it to our app
-module.exports = mongoose.model('Product', productSchema);
+var Product = mongoose.model('products', productSchema);
+
+var shoes = new Product({
+	data            : {
+        name        : 'Jordans',
+        description     : 'Dope Shoes',
+    },
+    photo         : {
+        url           : 'http://www.google.com',
+        altText        : 'picture of shoes'
+    }
+});
+
+shoes.save(function (err, shoes) {
+  if (err) return console.error(err);
+});

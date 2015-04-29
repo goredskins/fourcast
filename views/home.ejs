@@ -57,97 +57,28 @@
     </nav>
 
 <div class="container">
-            <div class="menu row">
-                <div class="col-sm-12">
-                    <div class="products-grid">
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Blue/Black Dress</div>
+    <div class="menu row">
+        <div class="col-sm-12">
+            <div class="products-grid">
+               <% for(var i=0; i<12; i++) {%>
+                    <div class="product menu-category">
+                        <a href=<%= "/products/" + products[i].data.short_desc %> >
+                            <div class="menu-category-name list-group-item active productbar"><%= products[i].data.name%></div>
                             <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="dress.png">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Jeans</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="jeans.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Dark Blue Jeans<span class="badge">$80</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$325</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="div-image">
-                                <img class="product-image menu-item list-group-item" src="sweater.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$59</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Dress</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="dress2.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$56</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe2.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$60</span></a>
-                        </div>
-
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Pants</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="pants.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shirt</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shirt.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$80</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="sweater2.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Dress</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="dress3.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$400</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe3.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$645</span></a>
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="sweater3.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$49</span></a>
-
-                        </div>
+                                <img class="product-image menu-item list-group-item" src=<%= products[i].photo.featured%>>
+                            </div>
+                            <div class="menu-item list-group-item">
+                                Vendor
+                            <span class="badge"><%= products[i].data.price%></span>
+                            </div>
+                        </a>
                     </div>
-                </div>
+                <% } %>
             </div>
-            <!--/row-->
         </div>
+    </div>
+            <!--/row-->
+</div>
 
     <footer class="footer">
       <div class="container">

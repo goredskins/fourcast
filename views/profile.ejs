@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Item - Start Bootstrap Template</title>
+    <title>Profile</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
@@ -33,7 +33,11 @@
 </head>
 
 <body>
-
+<ul>
+<% for(var i=0; i<5; i++) {%>
+   <li><%= products[i].data.name %></li>
+<% } %>
+</ul>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -79,7 +83,7 @@
             <img align="left" class="fb-image-profile thumbnail" src="me.jpg" alt="Profile image example"/>
             <div class="fb-profile-text">
                 <h1>Nathan Thillairajah</h1>
-                <p>I love fashion! Designing clothes is my favorite!</p>
+                <p>This is an example of a sample FourCast Designer profile.  Nathan's designs are displayed dynamically below from MongoDB (all products tagged with user [nthilly23@gmail.com])</p>
             </div>
         </div>
     </div> <!-- /container -->  
@@ -89,61 +93,15 @@
             <div class="menu row">
                 <div class="col-sm-12">
                     <div class="products-grid">
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Blue/Black Dress</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="dress.png">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
 
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$325</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="div-image">
-                                <img class="product-image menu-item list-group-item" src="sweater.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$59</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe2.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$60</span></a>
-                        </div>
-
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Pants</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="pants.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="sweater2.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$99</span></a>
-
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Shoe</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="shoe3.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$645</span></a>
-                        </div>
-                        <div class="product menu-category">
-                            <div class="menu-category-name list-group-item active productbar">Sweater</div>
-                            <div class="product-image">
-                                <img class="product-image menu-item list-group-item" src="sweater3.jpg">
-                            </div> <a href="/product/1" class="menu-item list-group-item">Vendor<span class="badge">$49</span></a>
-
-                        </div>
+                        <% for(var i=0; i<8; i++) {%>
+                            <div class="product menu-category">
+                                <div class="menu-category-name list-group-item active productbar"><%= products[i].data.name%></div>
+                                <div class="product-image">
+                                    <img class="product-image menu-item list-group-item" src=<%= products[i].photo.featured%>>
+                                </div> <a href=<%= "/products/" + products[i].data.short_desc %> class="menu-item list-group-item">Vendor<span class="badge"><%= products[i].data.price%></span></a>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

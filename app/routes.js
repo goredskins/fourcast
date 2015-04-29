@@ -1,4 +1,6 @@
 // app/routes.js
+//var models = require('./app/models');
+
 module.exports = function(app, passport) {
 
     // =====================================
@@ -8,12 +10,6 @@ module.exports = function(app, passport) {
         res.render('index.ejs'); // load the index.ejs file
     });
 
-    app.get('/home', isLoggedIn, function(req, res) {
-        res.render('home.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-        console.log(req.user);
-    });
     // =====================================
     // LOGIN ===============================
     // =====================================
@@ -45,25 +41,12 @@ module.exports = function(app, passport) {
     // =====================================
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-        console.log(req.user);
-    });
+
     app.get('/account', isLoggedIn, function(req, res) {
         res.render('account.ejs', {
             user : req.user // get the user out of session and pass to template
         });
         console.log(req.user);
-    });
-
-    app.get('/product/:productId', isLoggedIn, function(req, res) {
-        res.render('product.ejs', {
-            product : req.param("productId"), // get the user out of session and pass to template
-            user : req.user
-        });
-        console.log(req.param("productId"));
     });
 
     // =====================================
@@ -87,7 +70,6 @@ module.exports = function(app, passport) {
         failureRedirect : '/login', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
-
 
 };
 
