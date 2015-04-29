@@ -33,11 +33,6 @@
 </head>
 
 <body>
-<ul>
-<% for(var i=0; i<5; i++) {%>
-   <li><%= products[i].data.name %></li>
-<% } %>
-</ul>
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
@@ -93,13 +88,18 @@
             <div class="menu row">
                 <div class="col-sm-12">
                     <div class="products-grid">
-
-                        <% for(var i=0; i<8; i++) {%>
+                       <% for(var i=0; i<8; i++) {%>
                             <div class="product menu-category">
-                                <div class="menu-category-name list-group-item active productbar"><%= products[i].data.name%></div>
-                                <div class="product-image">
-                                    <img class="product-image menu-item list-group-item" src=<%= products[i].photo.featured%>>
-                                </div> <a href=<%= "/products/" + products[i].data.short_desc %> class="menu-item list-group-item">Vendor<span class="badge"><%= products[i].data.price%></span></a>
+                                <a href=<%= "/products/" + products[i].data.short_desc %> >
+                                    <div class="menu-category-name list-group-item active productbar"><%= products[i].data.name%></div>
+                                    <div class="product-image">
+                                        <img class="product-image menu-item list-group-item" src=<%= products[i].photo.featured%>>
+                                    </div>
+                                    <div class="menu-item list-group-item">
+                                        Vendor
+                                    <span class="badge"><%= products[i].data.price%></span>
+                                    </div>
+                                </a>
                             </div>
                         <% } %>
                     </div>
